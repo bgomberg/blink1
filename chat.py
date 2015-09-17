@@ -1,7 +1,7 @@
 from lib.blink1_ctypes import Blink1
 import argparse
 
-parser = argparse.ArgumentParser(description='Sets the blink(1) to green to indicate you are available.')
+parser = argparse.ArgumentParser(description='Sets the blink(1) to blue to indicate you are available on chat only.')
 led_options = parser.add_mutually_exclusive_group()
 led_options.add_argument('--both-leds', action='store_true')
 led_options.add_argument('--top-led', action='store_true')
@@ -16,4 +16,4 @@ else:
     ledn = 0
 
 b1 = Blink1()
-b1.fade_to_rgbn(1000, 0, 255, 0, ledn)
+b1.fade_to_rgbn(1000, 0, 0, 255, ledn)
